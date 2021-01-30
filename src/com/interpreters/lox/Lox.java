@@ -25,7 +25,11 @@ public class Lox {
         BufferedReader reader = new BufferedReader(input);
         while (true){
             System.out.print("> ");
-            run(reader.readLine());
+            String contents = reader.readLine();
+            if (contents.length() == 4 && contents.equals("exit")){
+                break;
+            }
+            run(contents);
             hadError = false;
         }
     }
